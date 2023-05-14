@@ -1,10 +1,9 @@
 import css from '../SingUp/SignUp.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/operations';
-import { selectIsLoggedIn } from 'redux/selectors';
 import { object, string } from 'yup';
 
 const initialValue = {

@@ -1,7 +1,7 @@
 import css from '../SingUp/SignUp.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/operations';
 import { object, string } from 'yup';

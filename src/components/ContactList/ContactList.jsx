@@ -1,7 +1,6 @@
 import Notiflix from 'notiflix';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useGetContactsQuery } from 'redux/contacts/contactsApi';
 import { deleteContact, fetchContacts } from 'redux/operations';
 import { getContacts, selectFilterField } from 'redux/selectors';
 import css from './ContactList.module.css';

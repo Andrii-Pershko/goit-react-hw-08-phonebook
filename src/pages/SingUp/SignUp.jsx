@@ -29,11 +29,12 @@ export const SignUp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSubmit = ({ name, email, password, checkPassword }, action) => {
+  const handleSubmit = async ({ name, email, password, checkPassword }, action) => {
     if (password !== checkPassword) {
       alert('Паролі не співпадають');
       return;
     }
+    
     dispatch(register({ name, email, password }));
     navigate('/', { replace: true });
     action.resetForm();

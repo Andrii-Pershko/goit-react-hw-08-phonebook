@@ -1,0 +1,9 @@
+.filterBox {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+.input {
+    margin-top: 10px;
+}

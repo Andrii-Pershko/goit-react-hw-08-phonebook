@@ -12,8 +12,6 @@ export const Home = () => {
 
   const handleLogout = () => {
     dispatch(logOut());
-
-    console.log(isLogin);
   };
 
   if (isLogin) {
@@ -23,7 +21,12 @@ export const Home = () => {
           <h1>{nameUser.name} are authorized!</h1>
           <p>you can</p>
           <div className={css.buttonBox}>
-            <button className={css.button}>Go to Contacts</button>
+            <button
+              className={css.button}
+              onClick={() => navigate('/contacts', { replace: true })}
+            >
+              Go to Contacts
+            </button>
             <p className={css.pusher}>or</p>
             <button
               className={`${css.button} ${css.buttonOut}`}

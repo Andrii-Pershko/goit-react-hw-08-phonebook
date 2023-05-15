@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/operations';
 import { object, string } from 'yup';
 
+
 const initialValue = {
   email: '',
   password: '',
@@ -32,6 +33,7 @@ export const Login = () => {
         password,
       })
     );
+
     if (res.meta.requestStatus === 'rejected') {
       alert('User not found, check email or password');
     } else if (res.meta.requestStatus === 'fulfilled') {
@@ -50,7 +52,7 @@ export const Login = () => {
         <Form autoComplete="off">
           <label className={css.labelBox}>
             <p>Email</p>
-            <Field type="email" name="email" />
+            <Field className={'input'} type="email" name="email" />
             <ErrorMessage
               component="p"
               className={css.nameError}

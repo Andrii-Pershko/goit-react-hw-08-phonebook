@@ -15,7 +15,7 @@ export const SharedLayout = () => {
             Home
           </Link>
           {isLogin ? (
-            <Link to="/contact"> Contacts</Link>
+            <Link to="/contacts"> Contacts</Link>
           ) : (
             <>
               <Link to="/registration">Sign Up</Link>

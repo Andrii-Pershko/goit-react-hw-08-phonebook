@@ -9,6 +9,7 @@ import { refreshUser } from 'redux/operations';
 import { Contacts } from 'pages/Contacts/Contacts';
 import { PrivateRoute } from './PrivateRoute';
 import { PageNotFound } from 'pages/PageNotFound';
+import { RestrictedRoute } from './RestrictedRoute';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -25,8 +26,20 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
-          <Route path="/registration" element={<SignUp />}></Route>
-          <Route path="/login" element={<Login />}></Route>
+
+          <Route
+            path="/registration"
+            element={
+              <RestrictedRoute redirectTo="/contacts" component={<SignUp />} />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+            }
+          />
+
           <Route
             path="/contacts"
             element={<PrivateRoute redirectTo="/" component={<Contacts />} />}

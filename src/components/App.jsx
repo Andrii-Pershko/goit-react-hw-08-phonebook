@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from 'redux/operations';
 import { Contacts } from 'pages/Contacts/Contacts';
+import { PrivateRoute } from './PrivateRoute';
+import { PageNotFound } from 'pages/PageNotFound';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -25,7 +27,11 @@ export const App = () => {
           <Route index element={<Home />} />
           <Route path="/registration" element={<SignUp />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/contacts" element={<Contacts />}></Route>
+          <Route
+            path="/contacts"
+            element={<PrivateRoute redirectTo="/" component={<Contacts />} />}
+          />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     );

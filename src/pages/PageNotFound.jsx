@@ -3,9 +3,6 @@ import { useNavigate } from 'react-router-dom';
 export const PageNotFound = () => {
   const navigate = useNavigate();
 
-  const onClick = () => {
-    console.log('first');
-  };
   return (
     <div>
       <h2>Page not found</h2>
